@@ -214,7 +214,7 @@ export const TreeBubble: FC = () => {
             };
 
             // Using axios instead of fetch
-            const response = await axios.post('http://localhost:3001/api/mint', payload, {
+            const response = await axios.post('https://puff-backend.onrender.com/api/mint', payload, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
@@ -264,7 +264,7 @@ export const TreeBubble: FC = () => {
         setDisableCreateMerkle(true);
         try {
 
-            const response = await axios.post('http://localhost:3001/api/createMerkleTree', {
+            const response = await axios.post('https://puff-backend.onrender.com/api/createMerkleTree', {
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
@@ -289,7 +289,7 @@ export const TreeBubble: FC = () => {
 
         try {
 
-            const response = await axios.post('http://localhost:3001/api/createCollection', {
+            const response = await axios.post('https://puff-backend.onrender.com/api/createCollection', {
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
@@ -310,7 +310,7 @@ export const TreeBubble: FC = () => {
         setDisableMintToCollection(true);
         try {
 
-            const response = await axios.post('http://localhost:3001/api/mintToCollection', {
+            const response = await axios.post('https://puff-backend.onrender.com/api/mintToCollection', {
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
@@ -363,7 +363,7 @@ export const TreeBubble: FC = () => {
             <div className="mint-details">
                 <div className="mint-info">
                     <span id="txtColor">{totalMinted - 1} / 10,000 Minted</span>
-                    <span id="txtColor">≡ {perNFTPrice} SOL* + GAS</span>
+                    <span id="txtColor">≡ {Number(perNFTPrice)} SOL* + GAS</span>
                 </div>
 
                 {lastMintedNft && (
